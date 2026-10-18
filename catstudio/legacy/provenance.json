@@ -1,0 +1,14 @@
+[
+  {
+    "file": "bigram_model.py",
+    "source": "week4/Assignment/Final_Submission/Assignment1_API_Source/assignment1_api/app/bigram_model.py",
+    "sha256": "15ead281bc25af1f34d1c32361df8c17c40ac27cdd8af87b9e4633c83a820086",
+    "modification": "None; byte-for-byte copy"
+  },
+  {
+    "file": "embeddings.py",
+    "source": "week4/Assignment/Final_Submission/Assignment1_API_Source/assignment1_api/app/embeddings.py",
+    "sha256": "4d952dbca9803dfee08b75320ede0cc383bab5dee2be12a3edb90eb1fb1eeada",
+    "modification": "None; byte-for-byte copy"
+  }
+]

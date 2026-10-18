@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-18T13:49:08.6648857Z",
+  "deployment_report_sha256": "1fed89f2a87b8469410ee9177321b06d4985eb70665cf5d3e1621c1204338411",
+  "container_id": "9138c96904a18be7810bc07c5f961e1ae86e8ccb65fa1e1d091b02d815a12fd8",
+  "image_id": "sha256:8d35e28518d92aebbd46bef61724c3faeb1ffe7a7aa98fcdf4db819931500477",
+  "compose_service": "catstudio",
+  "running": true,
+  "models_read_only": true,
+  "device_requested": "cpu",
+  "host_bindings": [
+    {
+      "HostIp": "127.0.0.1",
+      "HostPort": "8000"
+    }
+  ],
+  "runtime_source_sha256": {
+    "catstudio/__init__.py": "556d3b95b60d13384e8a6ad771b743afce9b6cfbff49a2985249b3c8a2de6f89",
+    "catstudio/api.py": "146dc3613f33cdf156c0598f55017cc24f9f9d701930da85e2f7f8eb53d8daa7",
+    "catstudio/data.py": "14918e9921e85385a576ff540099251aecda5314f757cf6c3bc23d632c2f4155",
+    "catstudio/legacy/__init__.py": "f7884a218996be0613d87e381d43a4d0c63871fbb4e8ff3fa549ecfee0d774b7",
+    "catstudio/legacy/bigram_model.py": "15ead281bc25af1f34d1c32361df8c17c40ac27cdd8af87b9e4633c83a820086",
+    "catstudio/legacy/embeddings.py": "4d952dbca9803dfee08b75320ede0cc383bab5dee2be12a3edb90eb1fb1eeada",
+    "catstudio/legacy/provenance.json": "c2227b105cbd8e3a3033ee10390ae4bd57bb56011fdb2d24f30735d53176a9a0",
+    "catstudio/model.py": "542cdc33c544a73102c9683100538f31ec0f18fcc5bce9d74b36ff3cf44510c6",
+    "catstudio/schemas.py": "89480461f16996ac291dc8006fee38ed09152c41bf2eb93512242b44f55a8915",
+    "catstudio/static/app.js": "193f91b77ba26d056a38a2c66a99cf8bcd78cde0bca4042a07b9df912ec04404",
+    "catstudio/static/index.html": "1fb97d9f53d5cb9036a90bef075090756a84e95df88f879c4c49d352e41045b2",
+    "catstudio/static/licenses/AFHQ_CC_BY_NC_4_LICENSE.txt": "c363be4fe1e1736782dd2fad3b49054726879271c956f0dd62d669bb734ee2a1",
+    "catstudio/static/licenses/SD_CreativeML_OpenRAIL_M_LICENSE.txt": "be351ebe7ac01bcdbb018639aadcfd38f136b7dc3f2a3d4d3a24db51d1b210ef",
+    "catstudio/static/styles.css": "59767ca6ac733f7cc878eb3e806eec55118aa6574e5928facbcde0dac78633bf",
+    "catstudio/static/terms.html": "cfea3b3f8f7c71652ec659b01cd506fb57bbfc0e8e4da6a84be24a64e1a3357c",
+    "catstudio/training.py": "c52daa19a18af76537cd28599a0089c0088059f612090be02bdc9fb2ca053b4f",
+    "scripts/verify_deployment.py": "13b27b62f3dea48165309dba2f7abfa35fd1f5dec1b30a07e4663a8c72017904"
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>CatStudio · A portrait from a few words</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="CatStudio home"><span class="brand-icon">C<span>·</span></span>CatStudio</a>
+      <div class="top-right"><span class="local-badge"><i></i> LOCAL STUDIO</span><a href="/docs" target="_blank" rel="noreferrer">API ↗</a></div>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">TEXT → CAT PORTRAIT</p>
+        <h1>A portrait from<br><em>a few words.</em></h1>
+        <p class="lead">Describe your cat. Explore the result.<br><span lang="zh-CN">用文字描述一只猫，生成属于它的头像。</span></p>
+      </section>
+      <section class="studio" aria-label="Portrait workspace">
+        <form id="portrait-form" class="controls">
+          <div class="section-label"><span>01 / YOUR IDEA</span><span lang="zh-CN">描述</span></div>
+          <label for="prompt">What does your cat look like?</label>
+          <p class="help" id="prompt-help">Use English for this model. Try coat color, face shape and background.<br><span lang="zh-CN">建议用英文写毛色、脸型和背景；无需上传照片或线稿。</span></p>
+          <textarea id="prompt" name="prompt" rows="5" minlength="5" maxlength="500" required aria-describedby="prompt-help">A close-up portrait of an orange and white cat, round face, looking at the camera, soft natural light, plain cream background</textarea>
+          <div class="prompt-footer"><span>Start with an example / 试一试</span><span id="character-count">0 / 500</span></div>
+          <div class="examples">
+            <button type="button" data-example="A close-up portrait of an orange and white cat, round face, looking at the camera, soft natural light, plain cream background">Orange & white</button>
+            <button type="button" data-example="A close-up portrait of a black cat, looking at the camera, soft natural light, plain gray background">Black cat</button>
+            <button type="button" data-example="A close-up portrait of a gray tabby cat, ears upright, looking at the camera, soft natural light, plain cream background">Gray tabby</button>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="model-choice">Model <span>模型</span></label><select id="model-choice"><option value="lora">CatStudio · trained LoRA</option><option value="base">Original · base model</option></select></div>
+            <div class="field seed-field"><label for="seed">Seed <span>随机种子</span></label><input id="seed" type="number" value="42" min="0" max="4294967295" step="1" required></div>
+          </div>
+          <p class="help tight">Keep the prompt and seed fixed to compare models.<br><span lang="zh-CN">比较训练前后时，保持描述、种子和下方参数相同。</span></p>
+          <details class="advanced">
+            <summary>Fine-tune the controls <span>更多设置</span></summary>
+            <div class="advanced-grid">
+              <div class="field"><label for="num-steps">Steps</label><input id="num-steps" type="number" value="20" min="5" max="50" step="1" required></div>
+              <div class="field"><label for="guidance-scale">Guidance</label><input id="guidance-scale" type="number" value="7.5" min="1" max="15" step="0.5" required></div>
+              <div class="field"><label for="adapter-scale">LoRA strength</label><input id="adapter-scale" type="number" value="1" min="0" max="1.5" step="0.1" required></div>
+            </div>
+            <p class="help tight">More steps take longer. Guidance controls how strongly the model follows text. LoRA strength applies only to the trained model.<br><span lang="zh-CN">步数越多通常越慢；Guidance 控制文字引导强度；LoRA 强度仅影响微调模型。</span></p>
+          </details>
+          <button type="submit" id="generate-button" class="generate-button"><span>Generate portrait</span><span aria-hidden="true">↗</span></button>
+          <p class="privacy-note">Runs on this machine · No paid generation API<br><span lang="zh-CN">在本机运行，不调用付费生图 API。</span></p>
+        </form>
+        <div class="result-panel">
+          <div class="section-label"><span>02 / YOUR PORTRAIT</span><span lang="zh-CN">生成结果</span></div>
+          <div id="preview" class="preview">
+            <div id="empty-state" class="empty-state">
+              <svg viewBox="0 0 200 180" width="160" height="144" fill="none" aria-hidden="true"><path d="M49 72L43 24L83 50C94 47 107 47 118 50L158 24L151 74C166 91 163 117 149 134C126 158 76 158 52 135C36 117 35 91 49 72Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M67 89C72 84 79 84 84 89M117 89C122 84 129 84 134 89M94 103L100 109L106 103H94ZM100 110V117M100 117C94 123 88 122 84 119M100 117C106 123 112 122 116 119M65 108L30 103M65 119L31 124M135 108L170 103M135 119L169 124" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h2>Your portrait will appear here.</h2>
+              <p>Describe a cat and click Generate portrait.<br><span lang="zh-CN">输入描述后，点击左侧按钮开始生成。</span></p>
+              <span class="illustration-note">Interface illustration · not a model output</span>
+            </div>
+            <img id="result-image" alt="Generated cat portrait" hidden>
+            <div id="busy-overlay" class="busy-overlay" hidden><div class="spinner"></div><strong id="busy-title">Creating your portrait…</strong><p id="elapsed">0 seconds</p><p>First use also loads the model.<br><span lang="zh-CN">首次生成需要加载模型；CPU 运行可能较慢。</span></p></div>
+          </div>
+          <div id="status" class="status" role="status" aria-live="polite">Checking the local model… / 正在检查本机模型…</div>
+          <div class="result-actions"><span id="result-summary">No portrait generated yet</span><a id="download" class="download" hidden download="catstudio.png">Download PNG ↓</a></div>
+          <details id="metadata-panel" class="metadata" hidden><summary>Generation record / 生成记录</summary><pre id="metadata"></pre><button id="download-record" type="button">Download JSON</button></details>
+        </div>
+      </section>
+      <aside class="study-note"><span class="note-mark">↔</span><p><strong>A small experiment in controllable generation.</strong> Compare the original model with a cat-specific LoRA. Some details may not follow the description; inspect the result before using it.<br><span lang="zh-CN">比较原模型与猫头像 LoRA；模型可能遗漏描述中的细节，请查看实际结果。</span></p></aside>
+    </main>
+    <footer><span>APPLIED GENERATIVE AI · COURSE PROJECT</span><span>AFHQ training data · Noncommercial coursework · <a href="/static/terms.html">Use & licenses</a></span></footer>
+  </div>
+</body>
+</html>

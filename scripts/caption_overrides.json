@@ -1,0 +1,7 @@
+{
+  "train_pixabay_cat_000154": {
+    "caption": "a portrait photograph of a cat",
+    "reason": "AI-assisted visual review of the fixed 48-image training sample found a colorpoint brown/cream cat, contradicting BLIP black-and-white. Remove the unsupported coat claim; do not invent a replacement fine-grained label.",
+    "review_type": "AI-assisted visual audit, not human ground truth"
+  }
+}

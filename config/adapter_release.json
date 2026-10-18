@@ -1,0 +1,36 @@
+{
+  "archive_url": "https://github.com/ShikiRyo1/apan5560-catstudio/releases/download/v1.0.0/catstudio-afhq-lora-v1.0.0.zip",
+  "archive_name": "catstudio-afhq-lora-v1.0.0.zip",
+  "archive_sha256": "96e633d4804a8eb8a5d3c938918f94f4ae3e484f1420bcc30e9ed7c725141c99",
+  "release_url": "https://github.com/ShikiRyo1/apan5560-catstudio/releases/tag/v1.0.0",
+  "files": {
+    "pytorch_lora_weights.safetensors": {
+      "bytes": 6414992,
+      "sha256": "87a74dd4f07243383d30c6efcfd5a1c12e5008e2b440f9af963b3f0b73828b30"
+    },
+    "ADAPTER_PROVENANCE.json": {
+      "bytes": 4299,
+      "sha256": "dd78f6695e50c8b6c0a78b2fdee1307e79f026c48d697a05b05a4aa2f3cbfc85"
+    },
+    "MODEL_CARD.md": {
+      "bytes": 5409,
+      "sha256": "f52d6afd751aad38fb743863853d0f2a9c2c6e09b302c62748e468dc4ba5378b"
+    },
+    "LICENSE_BASE_MODEL.txt": {
+      "bytes": 14385,
+      "sha256": "be351ebe7ac01bcdbb018639aadcfd38f136b7dc3f2a3d4d3a24db51d1b210ef"
+    },
+    "LICENSE_TRAINING_DATA.txt": {
+      "bytes": 19407,
+      "sha256": "c363be4fe1e1736782dd2fad3b49054726879271c956f0dd62d669bb734ee2a1"
+    },
+    "LICENSING.md": {
+      "bytes": 4953,
+      "sha256": "c42f2346164e6ad16d4492e7eba3d79be2e215d62b8e19e5a3b8fd97c1e344b7"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 4747,
+      "sha256": "af77db1d7517deb28bd30e7b26c24393915a072f441ddc520f1be277b67cf814"
+    }
+  }
+}

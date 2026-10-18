@@ -1,0 +1,14 @@
+# Inference/API versions tested in the CatStudio project environment.
+# Install the appropriate torch build before this file; see README.
+torch==2.11.0
+torchvision==0.26.0
+diffusers==0.35.2
+transformers==4.57.6
+peft==0.17.1
+accelerate==1.11.0
+huggingface_hub==0.36.2
+safetensors==0.8.0
+numpy==2.5.2
+pillow==12.3.0
+fastapi==0.141.1
+uvicorn==0.54.0

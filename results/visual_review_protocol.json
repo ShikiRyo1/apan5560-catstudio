@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "recorded_at_utc": "2026-10-18T12:46:39.491426+00:00",
+  "stage": "Written during training, before final comparison images were generated or inspected",
+  "basis": "The already frozen evaluation plan specifies all 16 prompt IDs at seed 101 for both models. This elaborates qualitative labels only; it does not change the generation grid, checkpoint selection or quantitative metrics.",
+  "evaluation_plan_sha256": "cf50a96e635f418cdc17d20b6ef8ebf1e537015a0b47a348c44816e4dda295be",
+  "models": [
+    "base",
+    "lora"
+  ],
+  "prompt_ids": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16"
+  ],
+  "seed": 101,
+  "reviewer": "Single AI-assisted visual reviewer; unblinded to model identity. No human preference experiment.",
+  "labels": [
+    "met",
+    "not_met",
+    "uncertain"
+  ],
+  "criteria": {
+    "recognizable_cat": "A recognizable cat portrait with a coherent face; record extra or missing facial features and conspicuous anatomical or texture defects in notes.",
+    "requested_color": "Visible broad coat colors agree with the full prompt. Lighting alone is not evidence of a different coat color; use uncertain when ambiguous.",
+    "requested_pattern": "The requested solid, tabby or bicolor pattern is visually supported. A pattern mismatch is separate from a color mismatch.",
+    "requested_pose": "Front view is approximately face-on; three-quarter view has visible obliqueness while both facial sides remain present; profile is predominantly side-on. Ambiguous intermediate views are uncertain.",
+    "plain_light_background": "The background is mostly light and visually simple. A slight gradient or soft shadow is acceptable. Distinct furniture, outdoor scenery or complex texture fails; a very tightly cropped face with too little visible background is uncertain. This is a qualitative check, not a new quantitative metric."
+  },
+  "record_fields": [
+    "model",
+    "prompt_id",
+    "seed",
+    "image_path",
+    "image_sha256",
+    "recognizable_cat",
+    "requested_color",
+    "requested_pattern",
+    "requested_pose",
+    "plain_light_background",
+    "visible_defects",
+    "notes"
+  ],
+  "rules": [
+    "Inspect every one of the fixed 32 images, including failures and safety-filtered outputs.",
+    "Record what is visible; do not infer improvements from validation loss or automated scores.",
+    "Keep uncertain separate from met and not_met. Do not turn this small single-reviewer audit into a general accuracy estimate.",
+    "The illustrative report pairs p03 and p15 at seed 101 were selected before output inspection. Additional failure examples must be labeled as examples, not representative samples.",
+    "Nearest-training-image pairs are a separate similarity screen. Inspect the recorded highest-similarity cases without claiming that similarity proves copying or that dissimilarity proves absence of memorization."
+  ]
+}

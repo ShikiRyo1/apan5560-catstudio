@@ -1,0 +1,48 @@
+{
+  "source_hashes": {
+    "05_Models/training_runs/full/summary.json": "5fa8a5380c076cdb7c058bd95a5bb61fb35d9c93487ea1a7ce6dc399ef21bdab",
+    "05_Models/training_runs/full/validation_history.json": "99c2e104d986d3e99dfcf4d60a9a0aba71122a995c350964e2172789a93fae70",
+    "06_Results/evaluation/summary.json": "376f72f3be0a03d14f4d367bcc24bac8e8138dd2f198487d4ab1ef8933fd9c3e",
+    "06_Results/evaluation/per_image_metrics.json": "77c833c1c6de7effdc23c8257d34f831cc7f991bbfec726e1977ced8143672d7",
+    "06_Results/evaluation/generated_clip_features.npy": "51dc29cbec95b41ec96c2d134958a624dc0b40cde71b5efe7983d0bf68eba729",
+    "05_Models/cat_lora/ADAPTER_PROVENANCE.json": "dd78f6695e50c8b6c0a78b2fdee1307e79f026c48d697a05b05a4aa2f3cbfc85",
+    "03_Code/config/evaluation_plan.json": "cf50a96e635f418cdc17d20b6ef8ebf1e537015a0b47a348c44816e4dda295be"
+  },
+  "matplotlib_version": "3.11.2",
+  "plot_source_sha256": "9e35e53fc30030273d7347eb392aa1ae51519cc501a0b4db82222da4531da578",
+  "adapter_sha256": "87a74dd4f07243383d30c6efcfd5a1c12e5008e2b440f9af963b3f0b73828b30",
+  "base_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "illustrative_pair_rule": "p03 and p15 at seed101 selected before outputs, all results retained separately",
+  "figures": [
+    "metric_means.pdf",
+    "metric_means.png",
+    "paired_differences.pdf",
+    "paired_differences.png",
+    "paired_p03_seed101.pdf",
+    "paired_p03_seed101.png",
+    "paired_p15_seed101.pdf",
+    "paired_p15_seed101.png",
+    "validation_curve.pdf",
+    "validation_curve.png"
+  ],
+  "figure_sha256": {
+    "metric_means.pdf": "3673232c3afb08ea3998c9d1dec38689e024752ef94e972ca9a20db70f0a2b06",
+    "metric_means.png": "82b6f7aa00a9189861051a6679f4f699c2f67a92c13cea59adba9a7f51243088",
+    "paired_differences.pdf": "9a8fe4a1f53581aad25b5001f9288a6bc7f39a0454d4060197360e7fcd5abbe4",
+    "paired_differences.png": "bfe7d927425486f04eb10016f6fd61ebe03d6651c92b9e946dd392887036ca25",
+    "paired_p03_seed101.pdf": "5cc7a89df29f542a843fe940baf9e74f05591140edc522ed056aba07602202d7",
+    "paired_p03_seed101.png": "efca58394ec763ed1922a50e60d1823afca8515c4301ceeeeb3a980d1a36b15d",
+    "paired_p15_seed101.pdf": "977748b978f809dfcf9ecc228e00c9d93dd2241cd635792ec0ca56acd04a2cee",
+    "paired_p15_seed101.png": "b65ec49278f3117df5286021a733ffadd115bb8a1948293fd1dbdb77b0d46a27",
+    "validation_curve.pdf": "ee24441aeb4eadc04b7725d3248be5fa2a4a7aaa111b37e1e1671b6a90cb46d9",
+    "validation_curve.png": "93d972126e548f73c88b3ae649faa821147eba3f8e916e644403b5d72c0e12b6"
+  },
+  "packaged_figure_sha256": {
+    "validation_curve.png": "93d972126e548f73c88b3ae649faa821147eba3f8e916e644403b5d72c0e12b6",
+    "metric_means.png": "82b6f7aa00a9189861051a6679f4f699c2f67a92c13cea59adba9a7f51243088",
+    "paired_differences.png": "bfe7d927425486f04eb10016f6fd61ebe03d6651c92b9e946dd392887036ca25",
+    "paired_p03_seed101.png": "efca58394ec763ed1922a50e60d1823afca8515c4301ceeeeb3a980d1a36b15d",
+    "paired_p15_seed101.png": "b65ec49278f3117df5286021a733ffadd115bb8a1948293fd1dbdb77b0d46a27"
+  },
+  "hash_note": "Packaged PNG hashes rechecked against the plot receipt, which also binds source inputs and plotting source."
+}

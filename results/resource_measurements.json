@@ -1,0 +1,16 @@
+{
+  "captured_utc": "2026-10-18T13:49:11.0294781Z",
+  "container_id": "9138c96904a18be7810bc07c5f961e1ae86e8ccb65fa1e1d091b02d815a12fd8",
+  "deployment_report_sha256": "1fed89f2a87b8469410ee9177321b06d4985eb70665cf5d3e1621c1204338411",
+  "units": "bytes",
+  "measurement_source": "Linux cgroup v2 memory.peak and memory.current",
+  "container_memory_peak_bytes": 8100757504,
+  "container_memory_current_bytes": 8088784896,
+  "docker_vm_memory_bytes": 16709976064,
+  "host_physical_memory_bytes": 34245156864,
+  "host_cpu_names": [
+    "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz"
+  ],
+  "host_logical_processors": 20,
+  "scope": "Container lifetime since creation, including loading, all queried endpoints and charged file cache. Not isolated model allocator memory, not host usage, and not a minimum-RAM guarantee. No memory counter was reset."
+}

@@ -1,0 +1,14 @@
+*
+!requirements.txt
+!requirements-legacy.txt
+!requirements-lock-cpu.txt
+!catstudio/
+!catstudio/**
+!scripts/
+!scripts/**
+!config/
+!config/**
+!licenses/
+!licenses/**
+**/__pycache__/
+**/*.pyc

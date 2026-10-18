@@ -1,0 +1,5 @@
+# Additional dependencies for image integrity / duplicate audits and evaluation.
+# Install requirements.txt and the appropriate PyTorch build first.
+ImageHash==4.3.2
+scipy==1.18.1
+PyWavelets==1.10.0

@@ -1,0 +1,32 @@
+services:
+  catstudio:
+    build: .
+    image: catstudio:1.0.0
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      CATSTUDIO_DEVICE: cpu
+      CATSTUDIO_BASE_MODEL: /models/base_sd15
+      CATSTUDIO_ADAPTER: /models/cat_lora
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - "../05_Models:/models:ro"
+    init: true
+    restart: "no"
+  assets:
+    profiles: ["setup"]
+    build: .
+    image: catstudio:1.0.0
+    user: "0:0"
+    environment:
+      HF_HUB_OFFLINE: "0"
+      TRANSFORMERS_OFFLINE: "0"
+      HF_HOME: /05_Models/hf_cache
+    volumes:
+      - "../05_Models:/05_Models"
+    entrypoint: ["python"]
+    command: ["scripts/download_assets.py", "sd15"]
+    healthcheck:
+      disable: true
+    restart: "no"

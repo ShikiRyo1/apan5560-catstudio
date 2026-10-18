@@ -1,0 +1,110 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "model_choice": "lora",
+  "num_steps": 20,
+  "mocked": false,
+  "portrait_requested": true,
+  "checks": {
+    "health_before": {
+      "status": "ok",
+      "service": "CatStudio",
+      "portrait": {
+        "status": "available",
+        "base_files_present": true,
+        "adapter_files_present": true,
+        "model_loaded": false,
+        "device_requested": "cpu",
+        "device_loaded": "not loaded",
+        "last_success": null,
+        "last_error": null,
+        "note": "Files present is not proof of successful inference. First generation loads and checks the model."
+      },
+      "assignment1": {
+        "text_generation": "available",
+        "embedding": "lazy; requires en_core_web_lg 3.8.0"
+      }
+    },
+    "frontend": "passed",
+    "openapi": "passed",
+    "assignment1_text": {
+      "generated_text": "the dog reads notes"
+    },
+    "assignment1_embedding": {
+      "word": "apple",
+      "normalized_word": "apple",
+      "model": "en_core_web_lg",
+      "model_version": "3.8.0",
+      "dimensions": 300
+    },
+    "invalid_seed_rejected": 422,
+    "portrait": {
+      "request": {
+        "prompt": "A close-up portrait of an orange and white cat, looking at the camera, soft natural light, plain cream background",
+        "seed": 42,
+        "model_choice": "lora",
+        "num_steps": 20,
+        "guidance_scale": 7.5,
+        "adapter_scale": 1.0
+      },
+      "metadata": {
+        "actual_model": "sd15_catstudio_lora",
+        "model_choice": "lora",
+        "model_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "prompt": "A close-up portrait of an orange and white cat, looking at the camera, soft natural light, plain cream background",
+        "negative_prompt": null,
+        "seed": 42,
+        "num_steps": 20,
+        "guidance_scale": 7.5,
+        "adapter_scale": 1.0,
+        "scheduler": "DPMSolverMultistepScheduler",
+        "use_karras_sigmas": true,
+        "width": 512,
+        "height": 512,
+        "device": "cpu",
+        "latency_seconds": 180.1958,
+        "load_seconds": 4.5805,
+        "peak_gpu_allocated_mb": null,
+        "peak_gpu_reserved_mb": null,
+        "nsfw_content_detected": false,
+        "safety_checker_enabled": true,
+        "prompt_token_count": 26,
+        "prompt_max_tokens": 77,
+        "prompt_was_truncated": false,
+        "base_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+        "adapter_sha256": "87a74dd4f07243383d30c6efcfd5a1c12e5008e2b440f9af963b3f0b73828b30",
+        "api_elapsed_seconds": 185.12
+      },
+      "request_seconds": 185.139,
+      "png": "lora_seed42_steps20.png",
+      "sha256": "f8d2198a6b00653289d37d70899c3743bcd73a27e364631531c1f42b77ad71fb",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "health_after": {
+      "status": "ok",
+      "service": "CatStudio",
+      "portrait": {
+        "status": "loaded",
+        "base_files_present": true,
+        "adapter_files_present": true,
+        "model_loaded": true,
+        "device_requested": "cpu",
+        "device_loaded": "cpu",
+        "last_success": {
+          "model_choice": "lora",
+          "seed": 42,
+          "api_elapsed_seconds": 185.12
+        },
+        "last_error": null,
+        "note": "Files present is not proof of successful inference. First generation loads and checks the model."
+      },
+      "assignment1": {
+        "text_generation": "available",
+        "embedding": "loaded"
+      }
+    }
+  },
+  "status": "passed"
+}

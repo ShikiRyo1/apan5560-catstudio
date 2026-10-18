@@ -1,0 +1,2 @@
+# Optional report figures; not needed for Docker inference or training.
+matplotlib==3.11.2

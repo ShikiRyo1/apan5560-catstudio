@@ -1,0 +1,43 @@
+[
+  {
+    "step": 0,
+    "validation_mse": 0.18499673631231417,
+    "elapsed_seconds": 8.222611904144287
+  },
+  {
+    "step": 500,
+    "validation_mse": 0.18426613681367598,
+    "elapsed_seconds": 915.1871390342712,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-00500"
+  },
+  {
+    "step": 1000,
+    "validation_mse": 0.1840845859805995,
+    "elapsed_seconds": 1752.2727420330048,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-01000"
+  },
+  {
+    "step": 1500,
+    "validation_mse": 0.18396085453423439,
+    "elapsed_seconds": 2565.7627906799316,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-01500"
+  },
+  {
+    "step": 2000,
+    "validation_mse": 0.18387580933995196,
+    "elapsed_seconds": 3422.4206256866455,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-02000"
+  },
+  {
+    "step": 2500,
+    "validation_mse": 0.1838612595493032,
+    "elapsed_seconds": 4286.075937509537,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-02500"
+  },
+  {
+    "step": 3000,
+    "validation_mse": 0.18385434793162858,
+    "elapsed_seconds": 4993.073998451233,
+    "adapter_path": "05_Models/training_runs/full/checkpoint-03000"
+  }
+]

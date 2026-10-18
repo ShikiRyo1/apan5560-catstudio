@@ -1,0 +1,18 @@
+{
+  "test": "20-step uninterrupted versus checkpoint-10 resumed to step20",
+  "tensor_keys_equal": true,
+  "tensor_count": 256,
+  "max_absolute_difference": 4.6401073632296175e-06,
+  "weights_sha256_uninterrupted": "d267cccf77b59fb3bd313fdc96d1e056180d21e236a081d3f81e97490bbf7fbe",
+  "weights_sha256_resumed": "302983360ae57af5f8afccb934be6072909671644149d3a8a667f2650c5a8ea4",
+  "passed": false,
+  "strict_tolerance": 1e-06,
+  "strict_test_passed": false,
+  "functional_resume": "RNG/data-position/LR/update-count restore tested; first resumed loss exactly matches. Later mixed-precision CUDA gradients differ slightly; not bitwise identical.",
+  "next_step_loss_difference": 0.0,
+  "max_subsequent_loss_difference": 3.816559910774231e-06,
+  "lr_sequences_equal": true,
+  "validation_mse_absolute_difference": 2.1635059965774417e-07,
+  "scope": "20-step pilot, checkpoint10 resumed to20, samemachine/seed/config; source snapshots retained. Strict failed threshold is unchanged.",
+  "decision": "Continue full training and report small GPU numerical drift honestly; do not claim exact equivalence."
+}

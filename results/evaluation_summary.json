@@ -1,0 +1,119 @@
+{
+  "evaluation_plan_sha256": "cf50a96e635f418cdc17d20b6ef8ebf1e537015a0b47a348c44816e4dda295be",
+  "per_image_metrics_sha256": "77c833c1c6de7effdc23c8257d34f831cc7f991bbfec726e1977ced8143672d7",
+  "generated_clip_features_sha256": "51dc29cbec95b41ec96c2d134958a624dc0b40cde71b5efe7983d0bf68eba729",
+  "base_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "adapter_sha256": "87a74dd4f07243383d30c6efcfd5a1c12e5008e2b440f9af963b3f0b73828b30",
+  "image_pairs": 64,
+  "prompt_clusters": 16,
+  "seeds_per_prompt": 4,
+  "clip_evaluator": "openai/clip-vit-base-patch32",
+  "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "metrics": {
+    "clip_text_cosine": {
+      "base_mean": 0.31636880757287145,
+      "lora_mean": 0.3233042764477432,
+      "paired_delta_lora_minus_base": 0.006935468874871731,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        0.002212368347682059,
+        0.011806410609278818
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "color_proxy_agreement": {
+      "base_mean": 0.921875,
+      "lora_mean": 0.96875,
+      "paired_delta_lora_minus_base": 0.046875,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        0.0,
+        0.09375
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "pattern_proxy_agreement": {
+      "base_mean": 0.625,
+      "lora_mean": 0.671875,
+      "paired_delta_lora_minus_base": 0.046875,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        -0.15625,
+        0.25
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "pose_proxy_agreement": {
+      "base_mean": 0.390625,
+      "lora_mean": 0.4375,
+      "paired_delta_lora_minus_base": 0.046875,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        -0.15625,
+        0.25
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "nearest_train_clip_cosine": {
+      "base_mean": 0.9313499638810754,
+      "lora_mean": 0.9457929572090507,
+      "paired_delta_lora_minus_base": 0.014442993327975273,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        0.00995071472134441,
+        0.019021963234990835
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "nearest_train_phash_distance": {
+      "base_mean": 16.1875,
+      "lora_mean": 15.0625,
+      "paired_delta_lora_minus_base": -1.125,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        -1.5,
+        -0.75
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    },
+    "within_prompt_clip_cosine_distance_diversity": {
+      "base_mean": 0.04775791335850954,
+      "lora_mean": 0.045243722503073514,
+      "paired_delta_lora_minus_base": -0.002514190855436027,
+      "paired_prompt_cluster_bootstrap_95pct_ci": [
+        -0.01038871161872521,
+        0.004595236055320125
+      ],
+      "prompt_clusters": 16,
+      "bootstrap_replicates": 5000
+    }
+  },
+  "limitations": [
+    "CLIP similarity and attribute agreement are automated proxies, not human quality or factual accuracy.",
+    "Small fixed prompt grid is a course experiment, not a broad population benchmark.",
+    "Nearest-image screening cannot prove absence of memorization.",
+    "No target photo exists for an open-ended prompt; SSIM/PSNR are deliberately not used.",
+    "Independent CLIP evaluator may still share source-data biases with the generator.",
+    "The 500 reference photos were held out from this project's LoRA training and selection; overlap with SD1.5 pretraining data is unknown.",
+    "GPU memory reports PyTorch peak allocated/reserved memory in this process, not total GPU usage by all applications."
+  ],
+  "base": {
+    "nsfw_flagged": 0,
+    "mean_generation_seconds_excluding_first": 1.658125396825397,
+    "all_generation_seconds": 108.3811,
+    "peak_gpu_allocated_mb": 3257.534,
+    "peak_gpu_reserved_mb": 3836.0,
+    "nearest_train_phash_min": 12,
+    "exploratory_clip_polynomial_mmd2_vs_500_test": 1.2410268783569336
+  },
+  "lora": {
+    "nsfw_flagged": 0,
+    "mean_generation_seconds_excluding_first": 1.7874269841269843,
+    "all_generation_seconds": 119.003,
+    "peak_gpu_allocated_mb": 3260.575,
+    "peak_gpu_reserved_mb": 3836.0,
+    "nearest_train_phash_min": 12,
+    "exploratory_clip_polynomial_mmd2_vs_500_test": 0.8575124740600586
+  },
+  "exploratory_mmd_note": "Unbiased squared MMD with kernel (1 + cosine)^3 on normalized CLIP features; may be negative in finite samples. Exploratory diagnostic added before output generation; not standard Inception KID/FID and not used to select checkpoint."
+}

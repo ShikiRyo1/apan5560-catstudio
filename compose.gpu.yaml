@@ -1,0 +1,9 @@
+services:
+  catstudio:
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    image: catstudio:1.0.0-cuda
+    environment:
+      CATSTUDIO_DEVICE: cuda
+    gpus: all
